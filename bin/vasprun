@@ -1,11 +1,14 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import os
+import sys
 import argparse
 from pprint import pprint
 from vasprun.plot import plot_bands
 from vasprun.io import parse_vasprun, update_bands_xplotinfo
 from json_tricks import dump
 
+# keep the '.' for direct comparison against splitext()
+FIGFILEEXT = '.pdf'
 
 def main():
     """Handle arguments and call main routines."""
@@ -43,7 +46,7 @@ def main():
     )
     parser.add_argument(
         '-y', "--ylimit", dest="ylim", nargs=2, default=None, action="store",
-        type=float, help="A tuple: Y axis limits if -p is specified"
+        type=float, help="A tuple: Y axis limits if -pb is specified"
     )
     args = parser.parse_args()
 
@@ -52,6 +55,11 @@ def main():
     # vasprun.xml is.
     xmlfile = os.path.abspath(args.xmlfile)
     xmldir = os.path.dirname(xmlfile)
+
+    if not os.path.isfile(xmlfile):
+        msg = 'The file "{}" does not exist'.format(xmlfile)
+        parser.error(msg)
+
     if os.path.dirname(args.jsonfile) == '':
         jsonfile = os.path.join(xmldir, args.jsonfile)
     else:
