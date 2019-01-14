@@ -39,7 +39,7 @@ the The Vienna Ab initio simulation package (VASP) to a json dictionary
 with specific entries permitting analysis and plotting of density of
 states (DoS) and band-structure.
 """,
-    requires=[
+    install_requires = [
         "numpy",
         "ase",
         "lxml",
