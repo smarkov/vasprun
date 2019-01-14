@@ -14,13 +14,16 @@
 #
 import os
 import sys
-import sphinxcontrib.katex as katex
-import sphinx_bootstrap_theme
+# the following lines lead to error when run in venv on readthedocs...
+# comment as for now we don't have math to show for vasprun
+#import sphinxcontrib.katex as katex
+##import sphinx_bootstrap_theme
 # Allow import/extensions from current path
 sys.path.insert(0, os.path.abspath('.'))
+# The following is if we use katex
 # latexmacrodefs.py must be added by user.
 # It contains latex marcos to help with math writing
-from latexmacrodefs import latex_macros
+#from latexmacrodefs import latex_macros
 
 
 # -- Project information -----------------------------------------------------
@@ -51,8 +54,8 @@ extensions = [
 ]
 
 # Translate LaTeX macros to the required KaTeX format and add to options
-katex_macros = katex.latex_defs_to_katex_macros(latex_macros)
-katex_options = 'macros: {' + katex_macros + '}'
+#katex_macros = katex.latex_defs_to_katex_macros(latex_macros)
+#katex_options = 'macros: {' + katex_macros + '}'
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
