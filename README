@@ -5,41 +5,4 @@ This package contains a command line utility and a python library
 to facilitate analysis of data output by VASP based solely on the
 vasprun.xml file.
 
-vasprun
-  executable (see `vasprun -h` for optinos)
-
-Testing vasprun
-================
-
-Some reference xml files for unpolarised and noncollinear calculations
-with different types of kpoints definitions are in the `test` directory
-
-Installation
-============
-
-The package is intended for Python3
-
-System install
---------------
-
-You can install the script package via the standard 'python setup'
-mechanism. If you want to install it system-wide into your normal
-python installation, you simply issue::
-
-  python3 setup.py
-
-Local install
--------------
-
-Alternatively, you can install it locally in your home space, e.g.::
-
-  python3 setup.py install --user
-
-Or if you want to tinker with the package::
-
-  python3 setup.py develop --user
-
-The executable ends up in $HOME/.local/bin, so if not already done,
-add this directory to your path, e.g.(bash)::
-
-  export PATH=$PATH:$HOME/.local/bin
+Documentation: https://vasprun.readthedocs.io/en/latest/index.html

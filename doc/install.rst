@@ -42,7 +42,12 @@ Issue the following command from the root directory of the repository.
       Please omit the ``--user`` above if installing within a virtual environment.
 
       If installing with ``--user``, ensure that ``~/.local/bin`` is
-      in your ``$PATH`` environment variable.
+      in your ``$PATH`` environment variable in order to use
+      ``vasprun``, e.g. for ``bash``:
+
+      .. code:: bash
+
+         export PATH=$PATH:$HOME/.local/bin
 
 Dependencies
 ------------
@@ -52,6 +57,16 @@ Dependencies
 * lxml
 * json_tricks
 * ase
+
+
+Testing:
+--------
+
+Go to the ``test`` directory and run:
+
+.. code:: bash
+
+   python3 -m unittest
 
 
 Uninstall:
